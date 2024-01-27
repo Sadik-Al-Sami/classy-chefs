@@ -4,6 +4,7 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
   updateProfile,
 } from 'firebase/auth';
 import app from '../firebase/firebase.init';
@@ -34,6 +35,10 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log('Auth State Observer Detected A Change');
@@ -44,7 +49,15 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-  const authInfo = { createUser, signIn, user, loading, userName, userPhoto };
+  const authInfo = {
+    createUser,
+    signIn,
+    user,
+    loading,
+    userName,
+    userPhoto,
+    logOut,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

@@ -2,25 +2,33 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-  const { createUser, signIn, userName, userPhoto } = useContext(AuthContext);
+  const { createUser, signIn, userName, userPhoto, user } =
+    useContext(AuthContext);
   const location = useLocation();
-  const path = location?.state?.from?.pathname || '/';
   const navigate = useNavigate();
+  const path = location?.state?.from?.pathname || '/';
   const [register, setRegister] = useState(false);
-  // registration handling
 
+  // registration handling
   const [name, set_Name] = useState('');
   const [photoURL, set_PhotoURL] = useState('');
   const [u_email, setU_Email] = useState('');
   const [u_password, setU_Password] = useState('');
-
+  // registration errors
   const [nameError, set_NameError] = useState('');
   const [photoURLError, set_PhotoURLError] = useState('');
   const [u_EmailError, setU_EmailError] = useState('');
   const [u_PasswordError, setU_PasswordError] = useState('');
+  // login handling
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // firebase errors
+  const [error, setError] = useState('');
 
+  // registration functions
   const handleName = (e) => {
     const uNameInput = e.target.value;
     set_Name(uNameInput);
@@ -98,7 +106,7 @@ const Login = () => {
             console.log(error.message);
           });
         console.log(user);
-        navigate(path, {replace: true})
+        navigate(path, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -106,8 +114,44 @@ const Login = () => {
         console.log(errorMessage);
       });
   };
+
+  // login functions
+  const loginEmail = (e) => {
+    const emailInput = e.target.value;
+    setEmail(emailInput);
+  };
+  const loginPassword = (e) => {
+    const passwordInput = e.target.value;
+    setPassword(passwordInput);
+  };
+  const handleLogin = (e) => {
+    e.preventDefault();
+    signIn(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        toast.custom((t) => (
+          <div
+            className={`bg-white px-6 py-4 shadow-lg border border-gray-700 rounded-full ${
+              t.visible ? 'animate-enter' : 'animate-leave'
+            }`}>
+            Hello {user.displayName} 👋, It's nice to have you here!
+          </div>
+        ));
+        setTimeout(() => {
+          navigate(path, {replace: true})
+        }, 1000);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+  };
+
   return (
     <div>
+      <Toaster position='top-center' />
       <div className='w-80 lg:h-[700px] md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl mt-5 font-poppins'>
         {/* register form  */}
         <form
@@ -244,30 +288,35 @@ const Login = () => {
         <form
           className={`p-8 w-full mr-0 ml-auto duration-500 ${
             register ? 'lg:translate-x-full hidden lg:block' : ''
-          }`}>
+          }`}
+          onSubmit={handleLogin}>
           <h1 className='backdrop-blur-sm text-2xl font-semibold lg:text-4xl pb-4'>
             Login
           </h1>
           <div className='space-y-5'>
             <label
-              htmlFor='_email'
+              htmlFor='email'
               className='block'>
               Email
             </label>
             <input
-              id='_email'
+              id='email'
               type='email'
+              value={email}
+              onChange={loginEmail}
               placeholder='example@example.com'
               className='p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black'
             />
             <label
-              htmlFor='_password'
+              htmlFor='password'
               className='block'>
               Password
             </label>
             <input
-              id='_password'
+              id='password'
               type='password'
+              value={password}
+              onChange={loginPassword}
               placeholder='..............'
               min={5}
               className='p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black'
@@ -275,7 +324,7 @@ const Login = () => {
           </div>
           {/* button type will be submit for handling form submission*/}
           <button
-            type='button'
+            type='submit'
             className='py-2 px-5 mb-4 mx-auto mt-8 shadow-lg border rounded-md border-black block'>
             Submit
           </button>
