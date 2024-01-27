@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .error {
+    @apply text-red-500 text-sm m-0;
+  }
+  .error::before {
+    content: '⚠ ';
+  }
+}
+@layer base {
+  :root {
+    --text: #000000;
+    --background: #ffffff;
+    --primary: #4785ff;
+    --secondary: #f2f2f2;
+    --accent: #ffaf85;
+  }
+  .dark {
+    --text: #ffffff;
+    --background: #000000;
+    --primary: #003db8;
+    --secondary: #0d0d0d;
+    --accent: #7a2b00;
+  }
+}
