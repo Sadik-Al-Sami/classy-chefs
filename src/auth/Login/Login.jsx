@@ -1,12 +1,18 @@
 import React, { useContext } from 'react';
 import { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
-  const { createUser, signIn, userName, userPhoto, user } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    signIn,
+    userName,
+    userPhoto,
+    signInWithGoogle,
+    signInWithGithub,
+  } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const path = location?.state?.from?.pathname || '/';
@@ -27,6 +33,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   // firebase errors
   const [error, setError] = useState('');
+  const [popUpUser, setPopUpUser] = useState(null);
 
   // registration functions
   const handleName = (e) => {
@@ -139,13 +146,41 @@ const Login = () => {
           </div>
         ));
         setTimeout(() => {
-          navigate(path, {replace: true})
+          navigate(path, { replace: true });
         }, 1000);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorMessage);
+        console.log(errorMessage);
+      });
+  };
+  const googleSignInHandler = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        navigate(path, { replace: true });
+      })
+      .catch((error) => {
+        const errorCodee = error.errorCode;
+        const errorMessage = error.errorMessage;
+        console.log(errorMessage);
+      });
+  };
+  const githubSignInHandler = () => {
+    signInWithGithub()
+      .then((result) => {
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        navigate(path, { replace: true });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
       });
   };
 
@@ -341,6 +376,7 @@ const Login = () => {
           <hr />
           <button
             type='button'
+            onClick={googleSignInHandler}
             className='md:w-60 py-2 px-5 mb-4 mt-8 mx-auto block shadow-lg border rounded-md border-black text-sm'>
             <svg
               viewBox='-0.5 0 48 48'
@@ -396,6 +432,7 @@ const Login = () => {
           </button>
           <button
             type='button'
+            onClick={githubSignInHandler}
             className='md:w-60 py-2 px-5 mb-4 mt-8 mx-auto block shadow-lg border rounded-md border-black text-sm'>
             <svg
               xmlns='http://www.w3.org/2000/svg'

@@ -1,11 +1,14 @@
 import React from 'react';
+import Hero from '../components/Hero/Hero';
 
 const HomeLayout = () => {
-    return (
-        <div>
-            <h1>This is home</h1>
-        </div>
-    );
+  return (
+    <>
+      <div  className='container mx-auto mt-6'>
+        <Hero />
+      </div>
+    </>
+  );
 };
 
 export default HomeLayout;

@@ -16,25 +16,5 @@ export default {
       },
     },
   },
-  plugins: [require('rippleui')],
-  rippleui: {
-    // themes: [
-    //   {
-    //     themeName: 'light',
-    //     colorScheme: 'light',
-    //     colors: {
-    //       primary: '#235264',
-    //       backgroundPrimary: '#EEEEEE',
-    //     },
-    //   },
-    //   {
-    //     themeName: 'dark',
-    //     colorScheme: 'dark',
-    //     colors: {
-    //       primary: '#573242',
-    //       backgroundPrimary: '#222831',
-    //     },
-    //   },
-    // ],
-  },
+  plugins: [require("daisyui")],
 };
