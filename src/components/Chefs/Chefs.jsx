@@ -5,7 +5,7 @@ import Chef from '../Chef/Chef';
 const Chefs = () => {
   const chefsData = useLoaderData();
   return (
-    <div className='grid grid-cols-4 container mx-auto'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-4 container mx-auto'>
       {chefsData.map((chef) => (
         <Chef
           key={chef.id}
