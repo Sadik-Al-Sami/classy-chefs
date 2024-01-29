@@ -3,8 +3,8 @@ import Chef from '../Chef/Chef';
 import { Link } from 'react-router-dom';
 const ChefsSection = ({chefsData}) => {
   return (
-    <div>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3'>
+    <div className='bg-base-100'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 container mx-auto'>
         {chefsData.map((chef) => (
           <Chef
             key={chef.id}

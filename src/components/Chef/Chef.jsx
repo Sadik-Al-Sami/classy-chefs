@@ -209,7 +209,7 @@ const Chef = ({ chef }) => {
   ];
   console.log(chef);
   return (
-    <div className='p-8 shadow-lg max-w-[350px] font-sans rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-white'>
+    <div className='p-8 shadow-xl max-w-[350px] font-poppins rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-neutral-content'>
       {/* // avatar */}
       <div className='relative group'>
         <img
@@ -256,7 +256,7 @@ const Chef = ({ chef }) => {
           </div>
         ))}
       </div>
-      <button className='hover:bg-[#0095FF] hover:scale-95 font-medium hover:text-white w-[80%] py-2 rounded-full hover:shadow-xl   text-gray-400 shadow-[0px_0px_10px_#E2DADA] t duration-500'>
+      <button className='hover:bg-[#0095FF] hover:scale-95 font-medium hover:text-white w-[80%] py-2 rounded-full hover:shadow-xl text-gray-700 shadow-[0px_0px_10px_#E2DADA] t duration-500'>
         View Profile
       </button>
     </div>

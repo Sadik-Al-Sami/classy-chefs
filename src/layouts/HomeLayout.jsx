@@ -12,7 +12,7 @@ const HomeLayout = () => {
   }, []);
   return (
     <>
-      <div className='container mx-auto mt-6'>
+      <div className=''>
         <Hero />
         <ChefsSection chefsData={chefsData} />
       </div>
