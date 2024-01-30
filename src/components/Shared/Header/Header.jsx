@@ -16,6 +16,12 @@ const Header = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
   );
+  const [header, setHeader] = useState(false);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      window.scrollY > 50 ? setHeader(true) : setHeader(false);
+    });
+  }, []);
   useEffect(() => {
     localStorage.setItem('theme', theme);
     const localTheme = localStorage.getItem('theme');
@@ -29,7 +35,10 @@ const Header = () => {
     }
   };
   return (
-    <div className='navbar bg-base-100 pt-4'>
+    <div
+      className={` ${
+        header ? 'bg-base-300 shadow-lg text-base-content' : 'bg-base-200 text-base-content'
+      } navbar pt-4 fixed z-50 transition-all duration-500`}>
       <div className='navbar-start'>
         <div className='dropdown'>
           <div

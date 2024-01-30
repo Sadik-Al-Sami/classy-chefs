@@ -13,7 +13,7 @@ const ChefsSection = ({chefsData}) => {
       </div>
       <Link to='/chefs'>
         <div className='flex justify-center items-center my-4'>
-          <button className='hover:bg-[#0095FF] hover:scale-95 font-medium hover:text-white w-1/3 py-2 rounded-full hover:shadow-xl   text-gray-400 shadow-[0px_0px_10px_#E2DADA] duration-500 outline outline-1 outline-[#0095FF] mx-auto'>
+          <button className='hover:bg-success hover:scale-95 font-medium hover:text-white w-1/4 py-2 rounded-full hover:shadow-xl  shadow-[0px_0px_10px_#E2DADA] duration-500 outline outline-1 outline-success mx-auto'>
             Show All Chefs
           </button>
         </div>
