@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
   const { id, name, years_of_experience, likes, recipies, picture } = chef;
@@ -256,7 +257,7 @@ const Chef = ({ chef }) => {
         ))}
       </div>
       <button className='hover:bg-success hover:scale-95 font-medium hover:text-white w-[80%] py-2 rounded-full hover:shadow-xl text-base shadow-[0px_0px_10px_#E2DADA] duration-500'>
-        View Recipies
+        <Link to={`/chef/${id}`}>View Recipies</Link>
       </button>
     </div>
   );

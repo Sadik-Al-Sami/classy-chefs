@@ -6,6 +6,8 @@ import Chefs from '../../components/chefs/chefs';
 import Error from '../../components/Shared/Error/Error';
 import Recipies from '../../components/Recipies/Recipies';
 import RecipePage from '../../components/RecipePage/RecipePage';
+import About from '../../components/About/About';
+import Blog from '../../components/Blog/Blog';
 
 const LayoutRoute = createBrowserRouter([
   {
@@ -33,8 +35,24 @@ const LayoutRoute = createBrowserRouter([
       },
       {
         path: '/recipe/:id',
-        element: <>Hello</>
-      }
+        loader: ({ params }) =>
+          fetch(`https://classy-chefs-server.vercel.app/recipies/${params.id}`),
+        element: <RecipePage />,
+      },
+      {
+        path: '/chef/:id',
+        loader: ({ params }) =>
+          fetch(`https://classy-chefs-server.vercel.app/chef/${params.id}`),
+        element: <Recipies />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/blogs',
+        element: <Blog />,
+      },
     ],
   },
 ]);
