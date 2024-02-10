@@ -16,6 +16,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const path = location?.state?.from?.pathname || '/';
+  console.log(path);
   const [register, setRegister] = useState(false);
 
   // registration handling
@@ -185,7 +186,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className='p-20'>
       <Toaster position='top-center' />
       <div className='w-80 lg:h-[700px] md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl mt-5 font-poppins'>
         {/* register form  */}
@@ -308,7 +309,7 @@ const Login = () => {
         </form>
         {/* img */}
         <div
-          className={`hidden lg:block absolute w-1/2 h-full top-0 z-50 duration-500 overflow-hidden bg-black/20 ${
+          className={`hidden lg:block absolute w-1/2 h-full top-0 z-0 duration-500 overflow-hidden bg-black/20 ${
             register
               ? 'translate-x-full rounded-bl-full duration-500'
               : 'rounded-br-full'
