@@ -7,13 +7,13 @@ const Chefs = () => {
   return (
     <div className='bg-base-200'>
       <div className='grid md:grid-cols-2 lg:grid-cols-4 container mx-auto'>
-        {chefsData.map((chef) => (
-          <Chef
-            key={chef.id}
-            chef={chef}>
-            hello
-          </Chef>
-        ))}
+        {setTimeout(() => {
+          chefsData.map((chef) => (
+            <Chef
+              key={chef.id}
+              chef={chef}></Chef>
+          ));
+        }, 5000)}
       </div>
     </div>
   );

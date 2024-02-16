@@ -9,6 +9,7 @@ import RecipePage from '../../components/RecipePage/RecipePage';
 import About from '../../components/About/About';
 import Blog from '../../components/Blog/Blog';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import LoadingPage from '../../layouts/LoadingPage';
 
 const LayoutRoute = createBrowserRouter([
   {
@@ -69,6 +70,10 @@ const LayoutRoute = createBrowserRouter([
       {
         path: '/blogs',
         element: <Blog />,
+      },
+      {
+        path: '/loading',
+        element: <LoadingPage/>,
       },
     ],
   },
