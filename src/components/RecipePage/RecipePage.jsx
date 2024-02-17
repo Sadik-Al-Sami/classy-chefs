@@ -18,16 +18,16 @@ const RecipePage = () => {
   return (
     <div className='bg-base-200'>
       <div className='container bg-base-300 rounded-xl shadow-md mx-auto p-10 font-poppins'>
-        <h1 className='mt-20 text-center text-4xl'>{name}</h1>
-        <div className='grid md:grid-cols-2 mt-10'>
-          <div>
+        <h1 className='mt-20 text-center text-4xl'>Chef Details</h1>
+        <div className='grid md:grid-cols-2 justify-items-center mt-10'>
+          <div className='row-span-8'>
             <img
               className='rounded-md'
-              src='https://source.unsplash.com/400x400/?profile'
+              src='https://source.unsplash.com/728x485/?profile'
               alt={picture}
             />
           </div>
-          <div>
+          <div className='row-span-4'>
             {/* Chef Details */}
             <div className='flex flex-col text-lg'>
               <p>
@@ -37,9 +37,32 @@ const RecipePage = () => {
                 <span className='font-semibold'>Likes on this recipe</span> :{' '}
                 {likes}
               </p>
+              <p>
+                <span className='font-semibold'>Experience</span> :{' '}
+                {years_of_experience} Years of experience
+              </p>
+              <button className='text-xl box-border border-4 border-sky-900 w-48 h-16 bg-sky-600 text-white relative group mt-8'>
+                <span className='pr-8'>Bookmark</span>
+                <span className='bg-sky-900 absolute right-0 top-0  h-full flex items-center justify-center px-1 group-hover:duration-300 group-hover:w-full w-10 duration-300'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke-width='1.5'
+                    stroke='currentColor'
+                    class='w-6 h-6'>
+                    <path
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      d='M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z'
+                    />
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
         </div>
+        <h1 className='mt-20 text-center font-bold text-5xl'>{name}</h1>
         <div className='grid md:grid-cols-2'>
           {/* Details */}
           <div className='row-span-4 mt-20'>
