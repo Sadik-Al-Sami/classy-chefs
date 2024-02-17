@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import ChefsSection from '../components/ChefsSection/ChefsSection';
+import VerticalAccordion from '../components/VerticalAccordion/VerticalAccordion';
 
 const HomeLayout = () => {
   const [chefsData, setChefsData] = useState([]);
@@ -15,6 +16,7 @@ const HomeLayout = () => {
       <div className=''>
         <Hero />
         <ChefsSection chefsData={chefsData} />
+        <VerticalAccordion />
       </div>
     </>
   );
