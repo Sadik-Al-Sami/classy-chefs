@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
@@ -16,8 +16,9 @@ const Login = () => {
   } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const [redirect, setRedirect] = useState(false);
   const path = location?.state?.from?.pathname || '/';
-  // console.log(path);
+  console.log(path);
   const [register, setRegister] = useState(false);
 
   // registration handling
@@ -36,7 +37,6 @@ const Login = () => {
   // firebase errors
   const [error, setError] = useState('');
   const [popUpUser, setPopUpUser] = useState(null);
-
   // registration functions
   const handleName = (e) => {
     const uNameInput = e.target.value;
@@ -159,16 +159,14 @@ const Login = () => {
   const googleSignInHandler = () => {
     signInWithGoogle()
       .then((result) => {
+        navigate(path, { replace: true });
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        navigate(path, { replace: true });
-        console.log(location);
       })
       .catch((error) => {
         const errorCodee = error.errorCode;
         const errorMessage = error.errorMessage;
-        console.log(errorMessage);
       });
   };
   const githubSignInHandler = () => {
@@ -176,7 +174,7 @@ const Login = () => {
       .then((result) => {
         const credential = GithubAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
-        navigate(path, { replace: true });
+        setRedirect(true);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -184,7 +182,6 @@ const Login = () => {
         console.log(errorMessage);
       });
   };
-
   return (
     <div className='pt-20'>
       <Toaster position='top-center' />

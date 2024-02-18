@@ -9,16 +9,19 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  signInWithRedirect,
 } from 'firebase/auth';
 import app from '../firebase/firebase.init';
-const auth = getAuth(app);
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 export const AuthContext = createContext(null);
 
+const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const googleSignInProvider = new GoogleAuthProvider();
   const githubSignInProvider = new GithubAuthProvider();
+
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
