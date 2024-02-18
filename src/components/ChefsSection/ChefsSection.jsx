@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 const ChefsSection = ({ chefsData }) => {
   return (
     <div className='bg-base-100'>
-      <h2 className='text-center p-5 font-semibold text-3xl'>Meet Our Chefs</h2>
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 container mx-auto'>
+      <h2 className='text-center pt-5 font-semibold text-3xl'>
+        Meet Our Chefs
+      </h2>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 container mx-auto px-2 lg:px-0 gap-2'>
         {chefsData.map((chef) => (
           <Chef
             key={chef.id}

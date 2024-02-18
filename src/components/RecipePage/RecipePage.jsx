@@ -50,10 +50,10 @@ const RecipePage = () => {
                     viewBox='0 0 24 24'
                     stroke-width='1.5'
                     stroke='currentColor'
-                    class='w-6 h-6'>
+                    className='w-6 h-6'>
                     <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
                       d='M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z'
                     />
                   </svg>
@@ -62,7 +62,9 @@ const RecipePage = () => {
             </div>
           </div>
         </div>
-        <h1 className='mt-20 text-center font-bold text-5xl'>{name}</h1>
+        <h1 className='mt-20 text-center font-bold text-2xl lg:text-5xl'>
+          {name}
+        </h1>
         <div className='grid md:grid-cols-2'>
           {/* Details */}
           <div className='row-span-4 mt-20'>

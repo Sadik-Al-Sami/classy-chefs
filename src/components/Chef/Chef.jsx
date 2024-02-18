@@ -209,7 +209,7 @@ const Chef = ({ chef }) => {
     },
   ];
   return (
-    <div className='p-8 shadow-xl max-w-[350px] font-poppins rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-primary-content mt-20'>
+    <div className='p-8 shadow-xl max-w-[350px] font-poppins rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-primary-content'>
       {/* // avatar */}
       <div className='relative group'>
         <img

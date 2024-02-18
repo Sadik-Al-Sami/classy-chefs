@@ -37,7 +37,9 @@ const Header = () => {
   return (
     <div
       className={` ${
-        header ? 'bg-base-300 shadow-lg text-base-content' : 'bg-base-200 text-base-content'
+        header
+          ? 'bg-base-300 shadow-lg text-base-content'
+          : 'bg-base-200 text-base-content'
       } navbar pt-4 fixed z-50 transition-all duration-500`}>
       <div className='navbar-start'>
         <div className='dropdown'>
@@ -79,13 +81,12 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <Link className='btn btn-ghost text-xl'>
-          {' '}
+        <Link className='btn btn-ghost text-xl hidden lg:flex lg:flex-row'>
           <img
             src='dish.png'
             alt=''
-          />{' '}
-          daisyUI
+          />
+          ClassyChefs
         </Link>
       </div>
       <div className='navbar-center hidden lg:flex'>

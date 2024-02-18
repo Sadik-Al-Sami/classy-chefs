@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Recipe = ({ recipe }) => {
   const { chef_id, id, photo, ingredients, instructions, name } = recipe;
   return (
-    <div className='card w-96 bg-base-100 shadow-xl mt-24 font-poppins'>
+    <div className='card w-80 bg-base-100 shadow-xl mt-24 font-poppins'>
       <figure>
         <img
           src={photo}
