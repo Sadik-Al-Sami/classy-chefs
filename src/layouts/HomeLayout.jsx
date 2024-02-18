@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import ChefsSection from '../components/ChefsSection/ChefsSection';
 import VerticalAccordion from '../components/VerticalAccordion/VerticalAccordion';
+import Stats from '../components/Stats/Stats';
+import Location from '../components/Location/Location';
 
 const HomeLayout = () => {
   const [chefsData, setChefsData] = useState([]);
@@ -17,6 +19,10 @@ const HomeLayout = () => {
         <Hero />
         <ChefsSection chefsData={chefsData} />
         <VerticalAccordion />
+        <div className='container mx-auto flex justify-center'>
+          <Stats />
+        </div>
+        <Location />
       </div>
     </>
   );
