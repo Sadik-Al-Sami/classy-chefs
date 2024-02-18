@@ -12,11 +12,12 @@ const Login = () => {
     userPhoto,
     signInWithGoogle,
     signInWithGithub,
+    user,
   } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const path = location?.state?.from?.pathname || '/';
-  console.log(path);
+  // console.log(path);
   const [register, setRegister] = useState(false);
 
   // registration handling
@@ -146,9 +147,7 @@ const Login = () => {
             Hello {user.displayName} 👋, It's nice to have you here!
           </div>
         ));
-        setTimeout(() => {
-          navigate(path, { replace: true });
-        }, 1000);
+        navigate(path, { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -164,6 +163,7 @@ const Login = () => {
         const token = credential.accessToken;
         const user = result.user;
         navigate(path, { replace: true });
+        console.log(location);
       })
       .catch((error) => {
         const errorCodee = error.errorCode;

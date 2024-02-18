@@ -8,7 +8,7 @@ const VerticalAccordion = () => {
 
   return (
     <section className='p-4 bg-base-100'>
-      <div className='flex flex-col lg:flex-row h-fit lg:h-[450px] w-full max-w-6xl mx-auto shadow overflow-hidden'>
+      <div className='flex flex-col lg:flex-row h-fit lg:h-[450px] container mx-auto shadow overflow-hidden'>
         {items.map((item) => {
           return (
             <Panel
@@ -35,7 +35,7 @@ const Panel = ({ open, setOpen, id, Icon, title, imgSrc, description }) => {
   return (
     <>
       <button
-        className='bg-white hover:bg-slate-50 transition-colors p-3 border-r-[1px] border-b-[1px] border-slate-200 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group'
+        className='bg-base-100 hover:bg-base-200 transition-colors p-3 border-r-[1px] border-b-[1px] border-base-300 flex flex-row-reverse lg:flex-col justify-end items-center gap-4 relative group'
         onClick={() => setOpen(id)}>
         <span
           style={{
@@ -118,38 +118,38 @@ const descriptionVariants = {
 const items = [
   {
     id: 1,
-    title: 'Earn more',
+    title: 'Eat Fresh',
     Icon: FiDollarSign,
     imgSrc:
-      'https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.',
+      'Fresh vegetables and fruits are beneficial to your heart. The fiber in them reduces your blood pressure and keeps your heart healthy. Besides that, they help improve blood cholesterol and reduce the risk of obesity, type 2 diabetes, and heart failure.',
   },
   {
     id: 2,
-    title: 'Play more',
+    title: 'Eat Healthy',
     Icon: FiPlay,
     imgSrc:
-      'https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80',
+      'https://images.unsplash.com/photo-1598214886806-c87b84b7078b?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.',
+      'Following a healthy diet has many benefits, including building strong bones, protecting the heart, preventing disease, and boosting mood',
   },
   {
     id: 3,
-    title: 'Keep track',
+    title: 'Eat Tasty',
     Icon: FiBell,
     imgSrc:
-      'https://images.unsplash.com/photo-1578450671530-5b6a7c9f32a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+      'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.',
+      'What is better than eating healthy food which is also tasty and fresh from the countryside',
   },
   {
     id: 4,
-    title: 'Grow faster',
+    title: 'Eat Happily',
     Icon: FiBarChart,
     imgSrc:
-      'https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      'https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum eius deserunt quia consectetur aliquid obcaecati voluptatibus quos distinctio natus! Tenetur.',
+      'Eat happily, live happily and always remember that a sound mind lies inside a healthy body',
   },
 ];
