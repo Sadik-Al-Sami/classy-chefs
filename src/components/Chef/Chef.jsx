@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Scroll from '../../utils/Scroll';
 
 const Chef = ({ chef }) => {
   const { id, name, years_of_experience, likes, recipies, picture } = chef;
@@ -210,6 +211,7 @@ const Chef = ({ chef }) => {
   ];
   return (
     <div className='p-8 shadow-xl max-w-[350px] font-poppins rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-primary-content'>
+      <Scroll/>
       {/* // avatar */}
       <div className='relative group'>
         <img

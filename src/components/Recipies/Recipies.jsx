@@ -1,11 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
+import Scroll from '../../utils/Scroll';
 
 const Recipies = () => {
   const recipiesData = useLoaderData();
   return (
     <div className='bg-base-200'>
+      <Scroll />
       <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center container mx-auto'>
         {recipiesData.map((recipe) => (
           <Recipe

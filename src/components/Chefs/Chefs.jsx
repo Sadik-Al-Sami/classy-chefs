@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Chef from '../Chef/Chef';
 import { AuthContext } from '../../providers/AuthProvider';
+import Scroll from '../../utils/Scroll';
 
 const Chefs = () => {
   const chefsData = useLoaderData();
   const { loading } = useContext(AuthContext);
   return (
     <div className='bg-base-200'>
+      <Scroll/>
       {loading && (
         <div className='container mx-auto'>
           <div className='h-screen flex justify-center items-center'>
@@ -18,7 +20,7 @@ const Chefs = () => {
           </div>
         </div>
       )}
-      <div className='grid md:grid-cols-2 lg:grid-cols-4 container mx-auto'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-4 container mx-auto pt-12'>
         {chefsData.map((chef) => (
           <Chef
             key={chef.id}

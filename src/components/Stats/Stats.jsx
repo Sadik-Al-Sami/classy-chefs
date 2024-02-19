@@ -15,8 +15,8 @@ const Stats = () => {
 
         <div className='stat place-items-center'>
           <div className='stat-title'>Available Chefs</div>
-          <div className='stat-value text-secondary'>5</div>
-          <div className='stat-desc text-secondary'>↗︎ 40 (2%)</div>
+          <div className='stat-value'>5</div>
+          <div className='stat-desc'>↗︎ 40 (2%)</div>
         </div>
 
         <div className='stat place-items-center'>

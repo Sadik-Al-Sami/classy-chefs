@@ -1,9 +1,11 @@
 import React from 'react';
+import Scroll from '../../utils/Scroll';
 
 const Blog = () => {
   return (
     <div className='bg-base-200'>
-      <div className='mx-auto container'>
+      <Scroll />
+      <div className='mx-auto container px-2 lg:px-0'>
         <section className='bg-base-200 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
           <div className='container bg-base-200'>
             <div className='-mx-4 flex flex-wrap'>

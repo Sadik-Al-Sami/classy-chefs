@@ -4,6 +4,7 @@ import ChefsSection from '../components/ChefsSection/ChefsSection';
 import VerticalAccordion from '../components/VerticalAccordion/VerticalAccordion';
 import Stats from '../components/Stats/Stats';
 import Location from '../components/Location/Location';
+import Scroll from '../utils/Scroll';
 
 const HomeLayout = () => {
   const [chefsData, setChefsData] = useState([]);
@@ -15,7 +16,8 @@ const HomeLayout = () => {
   }, []);
   return (
     <>
-      <div className=''>
+      <section>
+        <Scroll />
         <Hero />
         <ChefsSection chefsData={chefsData} />
         <VerticalAccordion />
@@ -23,7 +25,7 @@ const HomeLayout = () => {
           <Stats />
         </div>
         <Location />
-      </div>
+      </section>
     </>
   );
 };
