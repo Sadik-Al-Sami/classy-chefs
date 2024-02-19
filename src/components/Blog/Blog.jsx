@@ -25,7 +25,6 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-
             <div className='-mx-4 flex flex-wrap'>
               <BlogCard
                 date='Dec 22, 2023'
@@ -52,9 +51,7 @@ const Blog = () => {
     </div>
   );
 };
-
 export default Blog;
-
 const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
   return (
     <>

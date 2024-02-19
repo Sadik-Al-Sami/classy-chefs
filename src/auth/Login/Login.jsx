@@ -12,7 +12,6 @@ const Login = () => {
     userPhoto,
     signInWithGoogle,
     signInWithGithub,
-    user,
   } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -172,6 +171,7 @@ const Login = () => {
   const githubSignInHandler = () => {
     signInWithGithub()
       .then((result) => {
+        navigate(path, { replace: true });
         const credential = GithubAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         setRedirect(true);

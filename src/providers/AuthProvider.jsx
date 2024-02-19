@@ -9,7 +9,6 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
-  signInWithRedirect,
 } from 'firebase/auth';
 import app from '../firebase/firebase.init';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -19,6 +18,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [dataLoading, setDataLoading] = useState(false);
   const googleSignInProvider = new GoogleAuthProvider();
   const githubSignInProvider = new GithubAuthProvider();
 
@@ -74,6 +74,9 @@ const AuthProvider = ({ children }) => {
     logOut,
     signInWithGoogle,
     signInWithGithub,
+    setLoading,
+    dataLoading,
+    setDataLoading
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
