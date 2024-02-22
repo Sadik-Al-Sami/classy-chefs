@@ -74,6 +74,9 @@ const Header = () => {
               <NavLink to='/chefs'>Chefs</NavLink>
             </li>
             <li>
+              <NavLink to='/bookmarks'>Bookmarks</NavLink>
+            </li>
+            <li>
               <NavLink to='/about'>About</NavLink>
             </li>
             <li>
@@ -99,6 +102,9 @@ const Header = () => {
           </li>
           <li>
             <NavLink to='/chefs'>Chefs</NavLink>
+          </li>
+          <li>
+            <NavLink to='/bookmarks'>Bookmarks</NavLink>
           </li>
           <li>
             <NavLink to='/about'>About</NavLink>

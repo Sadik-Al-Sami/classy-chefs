@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { addToDb, checkStatus } from '../../utils/fakedb';
 
 const RecipePage = () => {
   const recipeData = useLoaderData();
+  const { chef_id, photo, name, instructions, ingredients } = recipeData;
+  const { id } = useParams();
   const [chefData, setChefsData] = useState({});
-  const { chef_id, id, photo, name, instructions, ingredients } = recipeData;
   useEffect(() => {
     fetch(`https://classy-chefs-server.vercel.app/chefs/${chef_id}`)
       .then((res) => res.json())
       .then((data) => setChefsData(data))
       .catch((error) => console.log(error));
   }, [chef_id]);
-  // console.log(recipeData);
-  console.log(chefData);
   const c_name = chefData.name;
   const { picture, recipes, years_of_experience, likes } = chefData;
+  const addToBookmarks = (id) => {
+    addToDb(id);
+  };
+  const checkAdded = checkStatus(id);
   return (
     <div className='bg-base-200'>
       <div className='container bg-base-300 rounded-xl shadow-md mx-auto p-10 font-poppins'>
@@ -41,24 +45,31 @@ const RecipePage = () => {
                 <span className='font-semibold'>Experience</span> :{' '}
                 {years_of_experience} Years of experience
               </p>
-              <button className='text-xl box-border border-4 border-sky-900 w-48 h-16 bg-sky-600 text-white relative group mt-8'>
-                <span className='pr-8'>Bookmark</span>
-                <span className='bg-sky-900 absolute right-0 top-0  h-full flex items-center justify-center px-1 group-hover:duration-300 group-hover:w-full w-10 duration-300'>
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke-width='1.5'
-                    stroke='currentColor'
-                    className='w-6 h-6'>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z'
-                    />
-                  </svg>
-                </span>
-              </button>
+              <Link to='/recipies'>
+                <button
+                  onClick={() => addToBookmarks(id)}
+                  className='text-xl box-border border-4 border-sky-900 w-48 h-16 bg-sky-600 text-white relative group mt-8'
+                  disabled={checkAdded}>
+                  <span className='pr-8'>
+                    {checkAdded ? 'Bookmarked' : 'Bookmark'}
+                  </span>
+                  <span className='bg-sky-900 absolute right-0 top-0  h-full flex items-center justify-center px-1 group-hover:duration-300 group-hover:w-full w-10 duration-300'>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      strokeWidth='1.5'
+                      stroke='currentColor'
+                      className='w-6 h-6'>
+                      <path
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        d='M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z'
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
