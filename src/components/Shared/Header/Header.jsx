@@ -14,7 +14,7 @@ const Header = () => {
       });
   };
   const [theme, setTheme] = useState(
-    localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
+    localStorage.getItem('theme') ? localStorage.getItem('theme') : 'nord'
   );
   const [header, setHeader] = useState(false);
   useEffect(() => {
@@ -29,9 +29,9 @@ const Header = () => {
   }, [theme]);
   const handleTheme = (e) => {
     if (e.target.checked) {
-      setTheme('dark');
+      setTheme('forest');
     } else {
-      setTheme('light');
+      setTheme('nord');
     }
   };
   return (
