@@ -210,8 +210,8 @@ const Chef = ({ chef }) => {
     },
   ];
   return (
-    <div className='p-8 shadow-xl max-w-[350px] font-poppins rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-primary-content'>
-      <Scroll/>
+    <div className='p-8 shadow-xl max-w-[350px] font-poppins rounded-xl space-y-4 my-10 flex flex-col justify-center items-center mx-auto bg-base-content'>
+      <Scroll />
       {/* // avatar */}
       <div className='relative group'>
         <img
@@ -224,27 +224,27 @@ const Chef = ({ chef }) => {
       </div>
       {/* // name & designation */}
       <div className='text-center space-y-1'>
-        <h1 className='text-2xl text-gray-700'>{name}</h1>
+        <h1 className='text-2xl text-base-100'>{name}</h1>
         <p className='text-gray-400 text-sm'>Chef</p>
       </div>
       <div className='flex justify-between w-full py-2'>
         <div className='text-center space-y-1'>
-          <p className='text-gray-500'>Recipies</p>
+          <p className='text-base-100'>Recipies</p>
           <p className='text-xl font-mono text-gray-700'>{recipies}</p>
         </div>
         <div className='text-center space-y-1'>
-          <p className='text-gray-500'>Likes</p>
+          <p className='text-base-100'>Likes</p>
           <p className='text-xl font-mono text-gray-700'>{likes}</p>
         </div>
         <div className='text-center space-y-1 '>
-          <p className='text-gray-500'>Experience</p>
+          <p className='text-base-100'>Experience</p>
           <p className='text-xl font-mono text-gray-700'>
             {years_of_experience}
           </p>
         </div>
       </div>
       {/* // bio */}
-      <p className='text-center text-sm text-gray-500 pb-2'>
+      <p className='text-center text-sm text-base-100 pb-2'>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore error
         ipsum officiis debitis quo odio?
       </p>
@@ -258,7 +258,7 @@ const Chef = ({ chef }) => {
           </div>
         ))}
       </div>
-      <button className='hover:bg-success hover:scale-95 font-medium hover:text-white w-[80%] py-2 rounded-full hover:shadow-xl text-base shadow-[0px_0px_10px_#E2DADA] duration-500'>
+      <button className='hover:bg-success hover:scale-95 font-medium hover:text-white w-[80%] py-2 rounded-full hover:shadow-xl text-base-100 shadow-[0px_0px_10px_#E2DADA] duration-500'>
         <Link to={`/chef/${id}`}>View Recipies</Link>
       </button>
     </div>

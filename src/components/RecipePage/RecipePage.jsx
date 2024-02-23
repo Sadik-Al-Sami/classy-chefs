@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { addToDb, checkStatus } from '../../utils/fakedb';
+import Scroll from '../../utils/Scroll';
 
 const RecipePage = () => {
   const recipeData = useLoaderData();
@@ -21,6 +22,7 @@ const RecipePage = () => {
   const checkAdded = checkStatus(id);
   return (
     <div className='bg-base-200'>
+      <Scroll />
       <div className='container bg-base-300 rounded-xl shadow-md mx-auto p-10 font-poppins'>
         <h1 className='mt-20 text-center text-4xl'>Chef Details</h1>
         <div className='grid md:grid-cols-2 justify-items-center mt-10'>
