@@ -9,7 +9,7 @@ const Chefs = () => {
   const { loading } = useContext(AuthContext);
   return (
     <div className='bg-base-200'>
-      <Scroll/>
+      <Scroll />
       {loading && (
         <div className='container mx-auto'>
           <div className='h-screen flex justify-center items-center'>
@@ -20,7 +20,7 @@ const Chefs = () => {
           </div>
         </div>
       )}
-      <div className='grid md:grid-cols-2 lg:grid-cols-4 container mx-auto pt-12'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center container mx-auto pt-12 md:px-0'>
         {chefsData.map((chef) => (
           <Chef
             key={chef.id}

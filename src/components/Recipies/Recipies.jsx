@@ -8,7 +8,7 @@ const Recipies = () => {
   return (
     <div className='bg-base-200'>
       <Scroll />
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center container mx-auto'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center container mx-auto'>
         {recipiesData.map((recipe) => (
           <Recipe
             key={recipe.id}
