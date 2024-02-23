@@ -183,7 +183,7 @@ const Login = () => {
       });
   };
   return (
-    <div className='pt-20'>
+    <div className='py-20 bg-base-200'>
       <Toaster position='top-center' />
       <div className='w-80 lg:h-[700px] md:w-96 lg:w-[800px] mx-auto bg-white flex items-center relative overflow-hidden shadow-xl mt-5 font-poppins'>
         {/* register form  */}
