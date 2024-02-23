@@ -10,19 +10,3 @@
     content: '⚠ ';
   }
 }
-@layer base {
-  :root {
-    --text: #000000;
-    --background: #ffffff;
-    --primary: #4785ff;
-    --secondary: #f2f2f2;
-    --accent: #ffaf85;
-  }
-  .dark {
-    --text: #ffffff;
-    --background: #000000;
-    --primary: #003db8;
-    --secondary: #0d0d0d;
-    --accent: #7a2b00;
-  }
-}

@@ -12,6 +12,7 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import LoadingPage from '../../layouts/LoadingPage';
 import { bookmarkedRecipiesLoader } from '../../loader/loader';
 import Bookmarks from '../../components/Bookmarks/Bookmarks';
+import Profile from '../../auth/Profile/Profile';
 
 const LayoutRoute = createBrowserRouter([
   {
@@ -81,6 +82,14 @@ const LayoutRoute = createBrowserRouter([
         path: '/bookmarks',
         element: <Bookmarks />,
         loader: bookmarkedRecipiesLoader,
+      },
+      {
+        path: '/profile',
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

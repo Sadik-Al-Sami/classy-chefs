@@ -4,13 +4,6 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        text: 'var(--text)',
-        background: 'var(--background)',
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        accent: 'var(--accent)',
-      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
@@ -18,6 +11,6 @@ export default {
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['light', 'dark', 'nord', 'forest'],
+    themes: ['nord', 'forest'],
   },
 };
