@@ -13,18 +13,13 @@ const Chefs = () => {
       {loading && (
         <div className='container mx-auto'>
           <div className='h-screen flex justify-center items-center'>
-            <PacmanLoader
-              size={100}
-              color='#36d7b7'
-            />
+            <PacmanLoader size={75} color='#36d7b7' />
           </div>
         </div>
       )}
       <div className='grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-center container mx-auto pt-12 md:px-0'>
         {chefsData.map((chef) => (
-          <Chef
-            key={chef.id}
-            chef={chef}></Chef>
+          <Chef key={chef.id} chef={chef}></Chef>
         ))}
       </div>
     </div>

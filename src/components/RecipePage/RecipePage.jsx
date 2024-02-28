@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { addToDb, checkStatus } from '../../utils/fakedb';
 import Scroll from '../../utils/Scroll';
+import LazyLoad from 'react-lazy-load';
 
 const RecipePage = () => {
   const recipeData = useLoaderData();
@@ -27,11 +28,13 @@ const RecipePage = () => {
         <h1 className='mt-20 text-center text-4xl'>Chef Details</h1>
         <div className='grid md:grid-cols-2 justify-items-center mt-10'>
           <div className='row-span-8'>
-            <img
-              className='rounded-md'
-              src='https://source.unsplash.com/728x485/?profile'
-              alt={picture}
-            />
+            <LazyLoad height={485}>
+              <img
+                className='rounded-md'
+                src='https://source.unsplash.com/728x485/?profile'
+                alt={picture}
+              />
+            </LazyLoad>
           </div>
           <div className='row-span-4'>
             {/* Chef Details */}
@@ -86,9 +89,7 @@ const RecipePage = () => {
               <h3 className='text-xl font-bold tracking-wide'>Ingredients</h3>
               <ul>
                 {ingredients.map((value, index) => (
-                  <li
-                    className='pl-4 text-lg'
-                    key={index}>
+                  <li className='pl-4 text-lg' key={index}>
                     {value}
                   </li>
                 ))}
@@ -103,11 +104,7 @@ const RecipePage = () => {
           </div>
           {/* Image */}
           <div className='row-span-8 mt-20'>
-            <img
-              className='rounded-lg'
-              src={photo}
-              alt=''
-            />
+            <img className='rounded-lg' src={photo} alt='' />
           </div>
         </div>
       </div>

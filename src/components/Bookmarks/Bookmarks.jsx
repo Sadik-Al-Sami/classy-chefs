@@ -1,11 +1,24 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
 import Scroll from '../../utils/Scroll';
 import { BsBookmarkXFill } from 'react-icons/bs';
+import BookmarkedRecipe from '../BookmarkedRecipe/BookmarkedRecipe';
+import { removeFromDb } from '../../utils/fakedb';
 
 const Bookmarks = () => {
   const bookmarkData = useLoaderData();
+  const [bookmark, setBookmark] = useState(bookmarkData);
+  const navigate = useNavigate();
+  const removeFromBookmarks = (id) => {
+    const remaining = bookmark.filter((product) => product.id !== id);
+    setBookmark(remaining);
+    removeFromDb(id);
+    if (remaining.length == 0) {
+      // window.location.reload();
+      navigate(0);
+    }
+  };
   return (
     <div className='bg-base-200'>
       <Scroll />
@@ -20,10 +33,11 @@ const Bookmarks = () => {
         </div>
       ) : (
         <div className='grid md:grid-cols-2 lg:grid-cols-3 justify-items-center container mx-auto py-16'>
-          {bookmarkData.map((recipe) => (
-            <Recipe
+          {bookmark.map((recipe) => (
+            <BookmarkedRecipe
               key={recipe.id}
-              recipe={recipe}></Recipe>
+              recipe={recipe}
+              removeFromBookmarks={removeFromBookmarks}></BookmarkedRecipe>
           ))}
         </div>
       )}
