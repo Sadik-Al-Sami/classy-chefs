@@ -1,7 +1,9 @@
 import React from 'react';
 import Scroll from '../../utils/Scroll';
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+  useTitle('Blogs');
   return (
     <div className='bg-base-200'>
       <Scroll />
@@ -58,11 +60,7 @@ const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
       <div className='w-full px-4 md:w-1/2 lg:w-1/3'>
         <div className='mb-10 w-full'>
           <div className='mb-8 overflow-hidden rounded'>
-            <img
-              src={image}
-              alt=''
-              className='w-full'
-            />
+            <img src={image} alt='' className='w-full' />
           </div>
           <div>
             {date && (

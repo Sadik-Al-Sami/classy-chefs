@@ -5,6 +5,7 @@ import Scroll from '../../utils/Scroll';
 import { BsBookmarkXFill } from 'react-icons/bs';
 import BookmarkedRecipe from '../BookmarkedRecipe/BookmarkedRecipe';
 import { removeFromDb } from '../../utils/fakedb';
+import useTitle from '../../hooks/useTitle';
 
 const Bookmarks = () => {
   const bookmarkData = useLoaderData();
@@ -19,6 +20,7 @@ const Bookmarks = () => {
       navigate(0);
     }
   };
+  useTitle('Bookmarks');
   return (
     <div className='bg-base-200'>
       <Scroll />

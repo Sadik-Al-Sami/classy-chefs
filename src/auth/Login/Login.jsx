@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
   const {
@@ -17,9 +18,8 @@ const Login = () => {
   const navigate = useNavigate();
   const [redirect, setRedirect] = useState(false);
   const path = location?.state?.from?.pathname || '/';
-  console.log(path);
   const [register, setRegister] = useState(false);
-
+  useTitle('Login');
   // registration handling
   const [name, set_Name] = useState('');
   const [photoURL, set_PhotoURL] = useState('');
@@ -198,9 +198,7 @@ const Login = () => {
             Register
           </h1>
           <div className='space-y-5'>
-            <label
-              htmlFor='name'
-              className='block dark:text-black'>
+            <label htmlFor='name' className='block dark:text-black'>
               Name
             </label>
             <input
@@ -212,9 +210,7 @@ const Login = () => {
               className='p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black'
             />
             {nameError && <span className='error'>{nameError}</span>}
-            <label
-              htmlFor='photo'
-              className='block dark:text-black'>
+            <label htmlFor='photo' className='block dark:text-black'>
               Photo URL
             </label>
             <input
@@ -226,9 +222,7 @@ const Login = () => {
               className='p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black'
             />
             {photoURLError && <span className='error'>{photoURLError}</span>}
-            <label
-              htmlFor='u_email'
-              className='block dark:text-black'>
+            <label htmlFor='u_email' className='block dark:text-black'>
               Email
             </label>
             <input
@@ -246,9 +240,7 @@ const Login = () => {
               }`}
             />
             {u_EmailError && <span className='error'>{u_EmailError}</span>}
-            <label
-              htmlFor='u_password'
-              className='block dark:text-black'>
+            <label htmlFor='u_password' className='block dark:text-black'>
               Password
             </label>
             <input
@@ -316,9 +308,7 @@ const Login = () => {
             Login
           </h1>
           <div className='space-y-5'>
-            <label
-              htmlFor='email'
-              className='block'>
+            <label htmlFor='email' className='block'>
               Email
             </label>
             <input
@@ -329,9 +319,7 @@ const Login = () => {
               placeholder='example@example.com'
               className='p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black'
             />
-            <label
-              htmlFor='password'
-              className='block'>
+            <label htmlFor='password' className='block'>
               Password
             </label>
             <input
@@ -372,9 +360,7 @@ const Login = () => {
               xmlns='http://www.w3.org/2000/svg'
               xmlnsXlink='http://www.w3.org/1999/xlink'
               fill='#000000'>
-              <g
-                id='SVGRepo_bgCarrier'
-                strokeWidth='0'></g>
+              <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
               <g
                 id='SVGRepo_tracerCarrier'
                 strokeLinecap='round'

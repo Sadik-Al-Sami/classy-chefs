@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Recipe = ({ recipe }) => {
   const { chef_id, id, photo, ingredients, instructions, name } = recipe;
+  useTitle(name)
   return (
     <div className='card w-72 bg-base-100 shadow-xl mt-24 font-poppins'>
       <figure>

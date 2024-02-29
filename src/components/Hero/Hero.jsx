@@ -1,5 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -14,12 +15,16 @@ const Hero = () => {
             customers your way with our world class chefs and their recipeies
           </p>
           <div className='flex space-x-4'>
-            <button className='inline-flex flex-nowrap items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-primary text-white'>
-              Get Started
-            </button>
-            <button className='inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-transparent text-secondary hover:text-white'>
-              Learn More
-            </button>
+            <Link to='/chefs'>
+              <button className='inline-flex flex-nowrap items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-primary text-white'>
+                Hire chefs
+              </button>
+            </Link>
+            <Link to='/about'>
+              <button className='inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 h-10 px-4 py-2 bg-transparent text-secondary hover:text-white'>
+                Learn More
+              </button>
+            </Link>
           </div>
           <p className='text-sm text-gray-500'>Trusted by 5000+ Users</p>
         </div>

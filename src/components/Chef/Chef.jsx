@@ -16,19 +16,13 @@ const Chef = ({ chef }) => {
           viewBox='0 0 512 512'
           xmlSpace='preserve'
           fill='#000000'>
-          <g
-            id='SVGRepo_bgCarrier'
-            strokeWidth='0'></g>
+          <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
           <g
             id='SVGRepo_tracerCarrier'
             strokeLinecap='round'
             strokeLinejoin='round'></g>
           <g id='SVGRepo_iconCarrier'>
-            <circle
-              fill='#DC4373'
-              cx='256'
-              cy='256'
-              r='256'></circle>
+            <circle fill='#DC4373' cx='256' cy='256' r='256'></circle>
             <path
               fill='#C13366'
               d='M358.334,151.376c-6.666,2.577-14.305,1.838-17.863-0.534 c-43.098-24.135-89.643-31.03-132.741-18.963c-61.693,18.227-86.893,86.635-86.73,150.494 c11.311,21.068,26.279,52.617,30.927,76.552l149.12,149.123C406.313,489.36,489.339,406.344,508.04,301.084L358.334,151.376z'></path>
@@ -53,19 +47,13 @@ const Chef = ({ chef }) => {
           viewBox='0 0 512 512'
           xmlSpace='preserve'
           fill='#000000'>
-          <g
-            id='SVGRepo_bgCarrier'
-            strokeWidth='0'></g>
+          <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
           <g
             id='SVGRepo_tracerCarrier'
             strokeLinecap='round'
             strokeLinejoin='round'></g>
           <g id='SVGRepo_iconCarrier'>
-            <circle
-              fill='#65A2D9'
-              cx='256'
-              cy='256'
-              r='256'></circle>
+            <circle fill='#65A2D9' cx='256' cy='256' r='256'></circle>
             <path
               fill='#3A7CA5'
               d='M393.014,139.326c-26.703,23.169-53.253,43.475-74.954,71.852 c-53.381,64.372-118.613,155.7-207.386,142.086l158.61,158.396c134.456-6.873,241.497-117.493,242.686-253.376L393.014,139.326z'></path>
@@ -90,19 +78,13 @@ const Chef = ({ chef }) => {
           viewBox='0 0 512 512'
           xmlSpace='preserve'
           fill='#000000'>
-          <g
-            id='SVGRepo_bgCarrier'
-            strokeWidth='0'></g>
+          <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
           <g
             id='SVGRepo_tracerCarrier'
             strokeLinecap='round'
             strokeLinejoin='round'></g>
           <g id='SVGRepo_iconCarrier'>
-            <circle
-              fill='#6C27B3'
-              cx='256'
-              cy='256'
-              r='256'></circle>
+            <circle fill='#6C27B3' cx='256' cy='256' r='256'></circle>
             <path
               fill='#501A96'
               d='M374.71,132.922c-30.587,3.872-62.479,3.737-94.575,0.681 c-44.822-3.448-110.33-24.135-134.465,17.239c-38.772,66.236-19.649,151.035-10.614,226.078l134.737,134.708 c130.388-6.923,234.886-111.407,241.831-241.79L374.71,132.922z'></path>
@@ -140,19 +122,13 @@ const Chef = ({ chef }) => {
           viewBox='0 0 512 512'
           xmlSpace='preserve'
           fill='#000000'>
-          <g
-            id='SVGRepo_bgCarrier'
-            strokeWidth='0'></g>
+          <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
           <g
             id='SVGRepo_tracerCarrier'
             strokeLinecap='round'
             strokeLinejoin='round'></g>
           <g id='SVGRepo_iconCarrier'>
-            <circle
-              fill='#D22215'
-              cx='256'
-              cy='256'
-              r='256'></circle>
+            <circle fill='#D22215' cx='256' cy='256' r='256'></circle>
             <path
               fill='#A81411'
               d='M384.857,170.339c-7.677,2.343-15.682,4.356-23.699,6.361 c-56.889,12.067-132.741-20.687-165.495,32.754c-27.317,42.494-35.942,95.668-67.017,133.663L294.629,509.1 c110.47-16.72,197.773-104.036,214.476-214.511L384.857,170.339z'></path>
@@ -177,19 +153,13 @@ const Chef = ({ chef }) => {
           viewBox='0 0 512.002 512.002'
           xmlSpace='preserve'
           fill='#000000'>
-          <g
-            id='SVGRepo_bgCarrier'
-            strokeWidth='0'></g>
+          <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
           <g
             id='SVGRepo_tracerCarrier'
             strokeLinecap='round'
             strokeLinejoin='round'></g>
           <g id='SVGRepo_iconCarrier'>
-            <circle
-              fill='#4E598F'
-              cx='256.001'
-              cy='256'
-              r='256'></circle>
+            <circle fill='#4E598F' cx='256.001' cy='256' r='256'></circle>
             <path
               fill='#364270'
               d='M511.596,241.7L391.019,121.085c-1.998,0.605-6.982-1.714-9.173-1.274 c-51.717,8.62-101.71,0-151.704,13.791c-24.135,6.896-25.859,36.202-34.478,55.165c-12.067,34.478-10.343,72.404-25.859,105.158 c-10.343,22.411-34.478,36.202-43.098,62.061c-2.875,10.785-2.705,24.379-5.956,34.69l120.98,120.922 c4.725,0.26,9.48,0.403,14.269,0.403c141.384,0,256-114.616,256-256C512.001,251.201,511.858,246.434,511.596,241.7z'></path>
@@ -230,15 +200,15 @@ const Chef = ({ chef }) => {
       <div className='flex justify-between w-full py-2'>
         <div className='text-center space-y-1'>
           <p className='text-base-100'>Recipies</p>
-          <p className='text-xl font-mono text-gray-700'>{recipies}</p>
+          <p className='text-xl font-mono text-secondary'>{recipies}</p>
         </div>
         <div className='text-center space-y-1'>
           <p className='text-base-100'>Likes</p>
-          <p className='text-xl font-mono text-gray-700'>{likes}</p>
+          <p className='text-xl font-mono text-secondary'>{likes}</p>
         </div>
         <div className='text-center space-y-1 '>
           <p className='text-base-100'>Experience</p>
-          <p className='text-xl font-mono text-gray-700'>
+          <p className='text-xl font-mono text-secondary'>
             {years_of_experience}
           </p>
         </div>

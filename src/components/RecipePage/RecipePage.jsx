@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { addToDb, checkStatus } from '../../utils/fakedb';
 import Scroll from '../../utils/Scroll';
 import LazyLoad from 'react-lazy-load';
+import useTitle from '../../hooks/useTitle';
 
 const RecipePage = () => {
   const recipeData = useLoaderData();
@@ -21,6 +22,7 @@ const RecipePage = () => {
     addToDb(id);
   };
   const checkAdded = checkStatus(id);
+  useTitle(name);
   return (
     <div className='bg-base-200'>
       <Scroll />

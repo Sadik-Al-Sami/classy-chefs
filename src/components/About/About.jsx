@@ -1,7 +1,9 @@
 import React from 'react';
 import Scroll from '../../utils/Scroll';
+import useTitle from '../../hooks/useTitle';
 
 const About = () => {
+  useTitle('About')
   return (
     <section>
       <Scroll />
